@@ -1,0 +1,27 @@
+{
+    "name": "cdcchen/aliyun-core",
+    "description": "阿里云PHP SDK Core Composer打包封装",
+    "type": "library",
+    "homepage": "https://github.com/cdcchen/aliyun-core",
+    "time": "2018-06-09 13:13:01",
+    "minimum-stability": "stable",
+    "support": {
+        "issues": "https://github.com/cdcchen/aliyun-core/issues",
+        "wiki": "https://github.com/cdcchen/aliyun-core/wiki",
+        "source": "https://github.com/cdcchen/aliyun-core"
+    },
+    "authors": [
+        {
+            "name": "cdcchen",
+            "email": "cdcchen@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "cdcchen\\aliyun\\core\\": "src/"
+        }
+    }
+}
