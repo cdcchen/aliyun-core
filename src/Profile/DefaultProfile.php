@@ -2,11 +2,11 @@
 
 namespace Aliyun\Core\Profile;
 
-use cdcchen\aliyun\core\auth\Credential;
-use cdcchen\aliyun\core\auth\ShaHmac1Signer;
-use cdcchen\aliyun\core\regions\ProductDomain;
-use cdcchen\aliyun\core\regions\Endpoint;
-use cdcchen\aliyun\core\regions\EndpointProvider;
+use Aliyun\Core\Auth\Credential;
+use Aliyun\Core\Auth\ShaHmac1Signer;
+use Aliyun\Core\Regions\ProductDomain;
+use Aliyun\Core\Regions\Endpoint;
+use Aliyun\Core\Regions\EndpointProvider;
 
 class DefaultProfile implements IClientProfile
 {

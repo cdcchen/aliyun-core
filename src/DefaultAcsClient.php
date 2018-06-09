@@ -1,10 +1,10 @@
 <?php
 namespace Aliyun\Core;
 
-use cdcchen\aliyun\core\exception\ClientException;
-use cdcchen\aliyun\core\exception\ServerException;
-use cdcchen\aliyun\core\regions\EndpointProvider;
-use cdcchen\aliyun\core\http\HttpHelper;
+use Aliyun\Core\exception\ClientException;
+use Aliyun\Core\exception\ServerException;
+use Aliyun\Core\Regions\EndpointProvider;
+use Aliyun\Core\Http\HttpHelper;
 
 class DefaultAcsClient implements IAcsClient 
 {    

@@ -2,7 +2,7 @@
 
 namespace Aliyun\Core;
 
-use cdcchen\aliyun\core\regions\EndpointConfig;
+use Aliyun\Core\Regions\EndpointConfig;
 
 //config http proxy
 define('ENABLE_HTTP_PROXY', FALSE);
