@@ -1,6 +1,6 @@
 <?php
 
-namespace cdcchen\aliyun\core;
+namespace Aliyun\Core;
 
 use cdcchen\aliyun\core\regions\EndpointConfig;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace cdcchen\aliyun\core\Auth;
+namespace Aliyun\Core\Auth;
 
 class Credential
 {

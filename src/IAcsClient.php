@@ -1,5 +1,5 @@
 <?php
-namespace cdcchen\aliyun\core;
+namespace Aliyun\Core;
 
 interface IAcsClient
 {

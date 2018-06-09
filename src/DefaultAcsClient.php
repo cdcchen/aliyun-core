@@ -1,5 +1,5 @@
 <?php
-namespace cdcchen\aliyun\core;
+namespace Aliyun\Core;
 
 use cdcchen\aliyun\core\exception\ClientException;
 use cdcchen\aliyun\core\exception\ServerException;

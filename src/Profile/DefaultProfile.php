@@ -1,6 +1,6 @@
 <?php
 
-namespace cdcchen\aliyun\core\profile;
+namespace Aliyun\Core\Profile;
 
 use cdcchen\aliyun\core\auth\Credential;
 use cdcchen\aliyun\core\auth\ShaHmac1Signer;

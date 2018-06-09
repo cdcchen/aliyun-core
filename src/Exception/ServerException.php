@@ -1,7 +1,7 @@
 <?php
 
 
-namespace cdcchen\aliyun\core\exception;
+namespace Aliyun\Core\Exception;
 
 class ServerException extends ClientException
 {

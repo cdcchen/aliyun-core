@@ -1,6 +1,6 @@
 <?php
 
-namespace cdcchen\aliyun\core\profile;
+namespace Aliyun\Core\Profile;
 
 interface IClientProfile
 {

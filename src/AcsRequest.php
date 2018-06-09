@@ -1,6 +1,6 @@
 <?php
 
-namespace cdcchen\aliyun\core;
+namespace Aliyun\Core;
 
 abstract class AcsRequest
 {

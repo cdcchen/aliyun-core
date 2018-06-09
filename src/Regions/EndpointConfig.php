@@ -1,6 +1,6 @@
 <?php
 
-namespace cdcchen\aliyun\core\regions;
+namespace Aliyun\Core\Regions;
 
 class EndpointConfig {
 
