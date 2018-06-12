@@ -65,20 +65,21 @@ class DefaultAcsClient implements IAcsClient
         bool $autoRetry = true,
         int $maxRetryNumber = 3
     ) {
-        if (null == $this->iClientProfile && (null == $iSigner || null == $credential
-                || null == $request->getRegionId() || null == $request->getAcceptFormat())) {
+        if (null === $this->iClientProfile && (null === $iSigner || null === $credential
+                || empty($request->getRegionId()) || empty($request->getAcceptFormat()))) {
             throw new ClientException("No active profile found.", "SDK.InvalidProfile");
         }
-        if (null == $iSigner) {
+
+        if (null === $iSigner) {
             $iSigner = $this->iClientProfile->getSigner();
         }
-        if (null == $credential) {
+        if (null === $credential) {
             $credential = $this->iClientProfile->getCredential();
         }
         $request = $this->prepareRequest($request);
         $domain = EndpointProvider::findProductDomain($request->getRegionId(), $request->getProduct());
 
-        if (null == $domain) {
+        if (null === $domain) {
             throw new ClientException("Can not find endpoint to access.", "SDK.InvalidRegionId");
         }
         $requestUrl = $request->composeUrl($iSigner, $credential, $domain);

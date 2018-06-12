@@ -190,7 +190,7 @@ abstract class AcsRequest
     /**
      * @return string
      */
-    public function getRegionId(): string
+    public function getRegionId(): ?string
     {
         return $this->regionId;
     }
