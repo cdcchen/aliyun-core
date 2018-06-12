@@ -2,124 +2,231 @@
 
 namespace Aliyun\Core;
 
+use Aliyun\Core\Auth\Credential;
+use Aliyun\Core\Auth\ISigner;
+
+/**
+ * Class AcsRequest
+ * @package Aliyun\Core
+ */
 abstract class AcsRequest
 {
-	protected  $version;
-	protected  $product;
-	protected  $actionName;
-	protected  $regionId;
-	protected  $acceptFormat;
-	protected  $method;
-	protected  $protocolType = "http";
-	protected  $content;
-	
-	protected $queryParameters = array();
-	protected $headers = array();
-	
-	function  __construct($product, $version, $actionName)
-	{
-	    $this->headers["x-sdk-client"] = "php/2.0.0";
-	    $this->product = $product;
-	    $this->version = $version;
-	    $this->actionName = $actionName;
-	}
-	
-	public abstract function composeUrl($iSigner, $credential, $domain);
-	
-	public function getVersion()
-	{
-		return $this->version;
-	}
-	
-	public function setVersion($version)
-	{
-		$this->version = $version;
-	}
-	
-	public function getProduct()
-	{
-		return $this->product;
-	}
-	
-	public function setProduct($product)
-	{
-		$this->product = $product;
-	}
-	
-	public function getActionName()
-	{
-		return $this->actionName;
-	}
-	
-	public function setActionName($actionName)
-	{
-		$this->actionName = $actionName;
-	}
-	
-	public function getAcceptFormat()
-	{
-		return	$this->acceptFormat;
-	}
-	
-	public function setAcceptFormat($acceptFormat)
-	{
-		$this->acceptFormat = $acceptFormat;
-	}
-	
-	public function getQueryParameters()
-	{
-		return $this->queryParameters;
-	}
-	
-	public function getHeaders()
-	{
-		return $this->headers;
-	}
-	
-	public function getMethod()
-	{
-		return $this->method;
-	}
-	
-	public function setMethod($method)
-	{
-		$this->method = $method;
-	}
-	
-	public function getProtocol()
-	{
-		return $this->protocolType;
-	}
-	
-	public function setProtocol($protocol)
-	{
-		$this->protocolType = $protocol;
-	}
-	
-	public function getRegionId()
-	{
-		return $this->regionId;
-	}
-	public function setRegionId($region)
-	{
-		$this->regionId = $region;
-	}
-	
-	public function getContent()
+    /**
+     * @var string
+     */
+    protected $version;
+    /**
+     * @var string
+     */
+    protected $product;
+    /**
+     * @var string
+     */
+    protected $actionName;
+    /**
+     * @var string
+     */
+    protected $regionId;
+    /**
+     * @var string
+     */
+    protected $acceptFormat;
+    /**
+     * @var string
+     */
+    protected $method;
+    /**
+     * @var string
+     */
+    protected $protocolType = "http";
+    /**
+     * @var string
+     */
+    protected $content;
+
+    /**
+     * @var array
+     */
+    protected $queryParameters = [];
+    /**
+     * @var array
+     */
+    protected $headers = [];
+
+    /**
+     * AcsRequest constructor.
+     * @param string $product
+     * @param string $version
+     * @param string $actionName
+     */
+    function __construct(string $product, string $version, string $actionName)
+    {
+        $this->headers["x-sdk-client"] = "php/2.0.0";
+        $this->product = $product;
+        $this->version = $version;
+        $this->actionName = $actionName;
+    }
+
+    /**
+     * @param ISigner $iSigner
+     * @param Credential $credential
+     * @param string $domain
+     * @return mixed
+     */
+    public abstract function composeUrl(ISigner $iSigner, Credential $credential, string $domain): string;
+
+    /**
+     * @return string
+     */
+    public function getVersion(): string
+    {
+        return $this->version;
+    }
+
+    /**
+     * @param string $version
+     */
+    public function setVersion(string $version)
+    {
+        $this->version = $version;
+    }
+
+    /**
+     * @return string
+     */
+    public function getProduct(): string
+    {
+        return $this->product;
+    }
+
+    /**
+     * @param string $product
+     */
+    public function setProduct(string $product)
+    {
+        $this->product = $product;
+    }
+
+    /**
+     * @return string
+     */
+    public function getActionName(): string
+    {
+        return $this->actionName;
+    }
+
+    /**
+     * @param string $actionName
+     */
+    public function setActionName(string $actionName)
+    {
+        $this->actionName = $actionName;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAcceptFormat(): string
+    {
+        return $this->acceptFormat;
+    }
+
+    /**
+     * @param string $acceptFormat
+     */
+    public function setAcceptFormat(string $acceptFormat)
+    {
+        $this->acceptFormat = $acceptFormat;
+    }
+
+    /**
+     * @return array
+     */
+    public function getQueryParameters()
+    {
+        return $this->queryParameters;
+    }
+
+    /**
+     * @return array
+     */
+    public function getHeaders()
+    {
+        return $this->headers;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMethod(): string
+    {
+        return $this->method;
+    }
+
+    /**
+     * @param string $method
+     */
+    public function setMethod(string $method)
+    {
+        $this->method = $method;
+    }
+
+    /**
+     * @return string
+     */
+    public function getProtocol(): string
+    {
+        return $this->protocolType;
+    }
+
+    /**
+     * @param string $protocol
+     */
+    public function setProtocol(string $protocol)
+    {
+        $this->protocolType = $protocol;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRegionId(): string
+    {
+        return $this->regionId;
+    }
+
+    /**
+     * @param string $region
+     */
+    public function setRegionId(string $region)
+    {
+        $this->regionId = $region;
+    }
+
+    /**
+     * @return string
+     */
+    public function getContent(): string
     {
         return $this->content;
     }
 
-    public function setContent($content)
+    /**
+     * @param string $content
+     */
+    public function setContent(string $content)
     {
         $this->content = $content;
-    } 
-        
-        
-    public function addHeader($headerKey, $headerValue)
+    }
+
+    /**
+     * @param string $headerKey
+     * @param $headerValue
+     */
+    public function addHeader(string $headerKey, $headerValue)
     {
         $this->headers[$headerKey] = $headerValue;
-    } 
-	
-		
+    }
+
+
 }

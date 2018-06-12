@@ -2,37 +2,58 @@
 
 namespace Aliyun\Core\Http;
 
+/**
+ * Class HttpResponse
+ * @package Aliyun\Core\Http
+ */
 class HttpResponse
 {
-	private $body;
-	private $status;
-	
-	public function getBody()
-	{
-		return $this->body;
-	}
-	
-	public function setBody($body)
-	{
-		$this->body = $body;
-	}
-	
-	public function getStatus()
-	{
-		return $this->status;
-	}
-	
-	public function setStatus($status)
-	{
-		$this->status  = $status;
-	}
-	
-	public function isSuccess()
-	{
-		if(200 <= $this->status && 300 > $this->status)
-		{
-			return true;
-		}
-		return false;
-	}
+    /**
+     * @var string
+     */
+    private $body;
+    /**
+     * @var int
+     */
+    private $status;
+
+    /**
+     * @return string
+     */
+    public function getBody(): string
+    {
+        return $this->body;
+    }
+
+    /**
+     * @param string $body
+     */
+    public function setBody(string $body)
+    {
+        $this->body = $body;
+    }
+
+    /**
+     * @return int
+     */
+    public function getStatus(): int
+    {
+        return $this->status;
+    }
+
+    /**
+     * @param int $status
+     */
+    public function setStatus(int $status)
+    {
+        $this->status = $status;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isSuccess(): bool
+    {
+        return 200 <= $this->status && 300 > $this->status;
+    }
 }

@@ -3,5 +3,5 @@ namespace Aliyun\Core;
 
 interface IAcsClient
 {
-	public function doAction($request);
+	public function doAction(AcsRequest $request);
 }

@@ -2,27 +2,62 @@
 
 namespace Aliyun\Core\Regions;
 
+/**
+ * Class ProductDomain
+ * @package Aliyun\Core\Regions
+ */
 class ProductDomain
 {
-	private $productName;
-	private $domainName;
-	
-	function  __construct($product, $domain) {
-		$this->productName = $product;
-		$this->domainName = $domain;
-	}
-	
-	public function getProductName() {
-		return $this->productName;
-	}
-	public function setProductName($productName) {
-		$this->productName = $productName;
-	}
-	public function getDomainName() {
-		return $this->domainName;
-	}
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-	}
+    /**
+     * @var string
+     */
+    private $productName;
+    /**
+     * @var string
+     */
+    private $domainName;
+
+    /**
+     * ProductDomain constructor.
+     * @param string $product
+     * @param string $domain
+     */
+    function __construct(string $product, string $domain)
+    {
+        $this->productName = $product;
+        $this->domainName = $domain;
+    }
+
+    /**
+     * @return string
+     */
+    public function getProductName(): string
+    {
+        return $this->productName;
+    }
+
+    /**
+     * @param string $productName
+     */
+    public function setProductName(string $productName)
+    {
+        $this->productName = $productName;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDomainName(): string
+    {
+        return $this->domainName;
+    }
+
+    /**
+     * @param string $domainName
+     */
+    public function setDomainName(string $domainName)
+    {
+        $this->domainName = $domainName;
+    }
 
 }

@@ -2,45 +2,82 @@
 
 namespace Aliyun\Core\Regions;
 
+/**
+ * Class Endpoint
+ * @package Aliyun\Core\Regions
+ */
 class Endpoint
 {
-	private $name;
-	private $regionIds; 
-	private $productDomains;
-	
-	function  __construct($name, $regionIds, $productDomains)
+    /**
+     * @var string
+     */
+    private $name;
+    /**
+     * @var array
+     */
+    private $regionIds      = [];
+    /**
+     * @var array
+     */
+    private $productDomains = [];
+
+    /**
+     * Endpoint constructor.
+     * @param string $name
+     * @param array $regionIds
+     * @param array $productDomains
+     */
+    function  __construct(string $name, array $regionIds, array $productDomains)
 	{
 		$this->name = $name;
 		$this->regionIds = $regionIds;
 		$this->productDomains = $productDomains;
 	}
-	
-	public function getName()
+
+    /**
+     * @return string
+     */
+    public function getName():string
 	{
 		return $this->name;
 	}
-	
-	public function setName($name)
+
+    /**
+     * @param string $name
+     */
+    public function setName(string $name)
 	{
 		$this->name = $name;
 	}
-	
-	public function getRegionIds()
+
+    /**
+     * @return array
+     */
+    public function getRegionIds():array
 	{
 		return $this->regionIds;
 	}
-	
-	public function setRegionIds($regionIds)
+
+    /**
+     * @param array $regionIds
+     */
+    public function setRegionIds(array $regionIds)
 	{
 		$this->regionIds = $regionIds;
 	}
-	
-	public function getProductDomains()
+
+    /**
+     * @return array
+     */
+    public function getProductDomains():array
 	{
 		return $this->productDomains;
 	}
-	
-	public function setProductDomains($productDomains)
+
+    /**
+     * @param ProductDomain[] $productDomains
+     */
+	public function setProductDomains(array $productDomains)
 	{
 		$this->productDomains = $productDomains;
 	}
