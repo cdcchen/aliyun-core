@@ -12,6 +12,9 @@ use Aliyun\Core\Regions\EndpointProvider;
 
 class DefaultAcsClient implements IAcsClient
 {
+    /**
+     * @var IClientProfile
+     */
     public $iClientProfile;
     public $__urlTestFlag__;
 
@@ -22,7 +25,7 @@ class DefaultAcsClient implements IAcsClient
     }
 
     /**
-     * @param RoaAcsRequest $request
+     * @param AcsRequest|RpcAcsRequest $request
      * @param ISigner|null $iSigner
      * @param Credential|null $credential
      * @param bool $autoRetry
@@ -32,7 +35,7 @@ class DefaultAcsClient implements IAcsClient
      * @throws ServerException
      */
     public function getAcsResponse(
-        RoaAcsRequest $request,
+        AcsRequest $request,
         ?ISigner $iSigner = null,
         ?Credential $credential = null,
         bool $autoRetry = true,
@@ -47,7 +50,7 @@ class DefaultAcsClient implements IAcsClient
     }
 
     /**
-     * @param RoaAcsRequest $request
+     * @param AcsRequest|RpcAcsRequest $request
      * @param ISigner|null $iSigner
      * @param Credential|null $credential
      * @param bool $autoRetry
@@ -56,7 +59,7 @@ class DefaultAcsClient implements IAcsClient
      * @throws ClientException
      */
     private function doActionImpl(
-        RoaAcsRequest $request,
+        AcsRequest $request,
         ?ISigner $iSigner = null,
         ?Credential $credential = null,
         bool $autoRetry = true,
@@ -109,7 +112,7 @@ class DefaultAcsClient implements IAcsClient
     }
 
     /**
-     * @param AcsRequest|RoaAcsRequest $request
+     * @param AcsRequest|RpcAcsRequest $request
      * @param ISigner|null $iSigner
      * @param Credential|null $credential
      * @param bool $autoRetry
@@ -129,10 +132,10 @@ class DefaultAcsClient implements IAcsClient
     }
 
     /**
-     * @param RoaAcsRequest $request
-     * @return RoaAcsRequest
+     * @param AcsRequest $request
+     * @return AcsRequest|RpcAcsRequest
      */
-    private function prepareRequest(RoaAcsRequest $request): RoaAcsRequest
+    private function prepareRequest(AcsRequest $request): AcsRequest
     {
         if (null == $request->getRegionId()) {
             $request->setRegionId($this->iClientProfile->getRegionId());
