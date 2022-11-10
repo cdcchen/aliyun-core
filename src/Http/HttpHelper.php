@@ -2,7 +2,7 @@
 
 namespace Aliyun\Core\Http;
 
-use Aliyun\Core\exception\ClientException;
+use Aliyun\Core\Exception\ClientException;
 
 class HttpHelper
 {
